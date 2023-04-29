@@ -1,0 +1,18 @@
+MariaDB [ap]> UPDATE invoices
+    -> SET terms_id = 1
+    -> WHERE vendor_id =
+    ->    (SELECT vendor_id
+    ->     FROM vendors
+    ->     WHERE vendor_name = 'Pacific Bell');
+Query OK, 6 rows affected (0.002 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+MariaDB [ap]>
+MariaDB [ap]> UPDATE invoices
+    -> SET terms_id = 1
+    -> WHERE vendor_id IN
+    ->    (SELECT vendor_id
+    ->     FROM vendors
+    ->     WHERE vendor_state IN ('CA', 'AZ', 'NV'));
+Query OK, 40 rows affected (0.003 sec)
+Rows matched: 51  Changed: 40  Warnings: 0
