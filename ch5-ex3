@@ -1,0 +1,21 @@
+MariaDB [ap]> USE ex;
+ERROR 1049 (42000): Unknown database 'ex'
+MariaDB [ap]>
+MariaDB [ap]> INSERT INTO color_sample (color_number)
+    -> VALUES (606);
+ERROR 1146 (42S02): Table 'ap.color_sample' doesn't exist
+MariaDB [ap]>
+MariaDB [ap]> INSERT INTO color_sample (color_name)
+    -> VALUES ('Yellow');
+ERROR 1146 (42S02): Table 'ap.color_sample' doesn't exist
+MariaDB [ap]>
+MariaDB [ap]> INSERT INTO color_sample
+    -> VALUES (DEFAULT, DEFAULT, 'Orange');
+ERROR 1146 (42S02): Table 'ap.color_sample' doesn't exist
+MariaDB [ap]>
+MariaDB [ap]> INSERT INTO color_sample
+    -> VALUES (DEFAULT, 808, NULL);
+ERROR 1146 (42S02): Table 'ap.color_sample' doesn't exist
+MariaDB [ap]>
+MariaDB [ap]> INSERT INTO color_sample
+    -> VALUES (DEFAULT, DEFAULT, NULL);
